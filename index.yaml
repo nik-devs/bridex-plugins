@@ -1,0 +1,17 @@
+# Bridex plugin registry.
+#
+# An instance fetches ONLY this file: the catalog, versions and update checks
+# all come from here — plugin repositories are cloned only at install time,
+# always at the pinned commit below.
+version: 1
+plugins:
+  - name: hello
+    kind: tool
+    description: Hello-world plugin — smoke-tests the catalog pipeline (install, update, removal)
+    version: 0.1.0
+    repo: https://github.com/nik-devs/bridex-plugin-hello
+    ref: main
+    commit: 5c29482ea645b4a21410dd2ad0d446490f7f7cbb
+    permissions:
+      network: false
+      llm: false
