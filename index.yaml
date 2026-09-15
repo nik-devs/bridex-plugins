@@ -15,3 +15,23 @@ plugins:
     permissions:
       network: false
       llm: false
+  - name: semantic-cache-local
+    kind: tool
+    description: Local semantic answer cache for support/FAQ agents — instant repeat answers, zero external services (word+trigram matching, jailed, no network)
+    version: 0.1.0
+    repo: https://github.com/nik-devs/bridex-plugin-semantic-cache-local
+    ref: main
+    commit: 2607fa38ac7cc742b0e8566643979228822c2246
+    permissions:
+      network: false
+      llm: false
+  - name: semantic-cache-langcache
+    kind: tool
+    description: Redis LangCache provider for the semantic answer cache — managed embedding-level matching on Redis Cloud (needs LANGCACHE_URL/CACHE_ID/API_KEY env)
+    version: 0.1.0
+    repo: https://github.com/nik-devs/bridex-plugin-semantic-cache-langcache
+    ref: main
+    commit: cc6e14d713505b75ce45cb0abf4ba91892cdb0eb
+    permissions:
+      network: true
+      llm: false
