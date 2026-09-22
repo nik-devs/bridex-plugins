@@ -45,3 +45,13 @@ plugins:
     permissions:
       network: true
       llm: false
+  - name: fal
+    kind: integration
+    description: Any fal.ai model through the queue API — free discovery (fal_models, fal_schema), CDN upload, run/result/cancel; outputs land in the task's artifacts with provenance and a cost estimate. Needs the FAL_KEY credential (Settings → Integrations).
+    version: 0.1.0
+    repo: https://github.com/nik-devs/bridex-plugin-fal
+    ref: main
+    commit: a432bf43746675acab9e51a3f198c8bfac7469bc
+    permissions:
+      network: true
+      llm: false
