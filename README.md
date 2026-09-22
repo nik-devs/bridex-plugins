@@ -33,8 +33,9 @@ their catalog and detect updates.
 ## Adding a plugin
 
 Open a PR that adds an entry to `index.yaml`. The plugin repository must
-contain `plugin.yaml` (name, version, kind, description, entry) and an ES
-module exporting `activate(ctx)` — see
+contain `plugin.yaml` (name, version, kind, description, entry, optional
+`requires_env` and `config_schema` — the latter renders the plugin's settings
+form in the dashboard) and an ES module exporting `activate(ctx)` — see
 [bridex-plugin-hello](https://github.com/nik-devs/bridex-plugin-hello) for the
 minimal working example.
 
