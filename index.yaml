@@ -38,10 +38,10 @@ plugins:
   - name: runners-gate
     kind: integration
     description: Gate to Cloud Run Jobs workers — submit heavy ops (render, convert, batch), the worker calls back and the requesting agent wakes in its session; multiple runners route by op name. GCP-resident (metadata auth).
-    version: 0.3.1
+    version: 0.4.0
     repo: https://github.com/nik-devs/bridex-plugin-runners-gate
     ref: main
-    commit: 1486f0f050cdf60b55a1521ece06ff75e1db0f54
+    commit: 29240c7e0c1896fd55343cc5cae7a763380e2b88
     permissions:
       network: true
       llm: false
