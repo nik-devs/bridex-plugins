@@ -58,10 +58,10 @@ plugins:
   - name: e2b-blender
     kind: integration
     description: Blender for agents in an isolated cloud sandbox (E2B) — Python in a live scene or from skill scripts, long renders run in the background and wake the agent, previews, files in and out of artifacts. Needs the E2B_API_KEY credential (Settings → Integrations).
-    version: 0.1.1
+    version: 0.1.2
     repo: https://github.com/nik-devs/bridex-plugin-e2b-blender
     ref: main
-    commit: b15b856ce06dba0f157409b34e0ab53ac516515b
+    commit: f412b4ffc7ebc87e3e50ad7218575739ced3d29f
     permissions:
       network: true
       llm: false
