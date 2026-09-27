@@ -48,10 +48,10 @@ plugins:
   - name: fal
     kind: integration
     description: Any fal.ai model for agents — video, image, audio. Outputs land in the task's artifacts with a cost estimate. Needs the FAL_KEY credential (Settings → Integrations).
-    version: 0.2.1
+    version: 0.2.2
     repo: https://github.com/nik-devs/bridex-plugin-fal
     ref: main
-    commit: 4c7bf6bf3526e9008c3747387c6aa7d70ecf84b0
+    commit: 809c5e71d8b9692c3794734f782e45490912cc83
     permissions:
       network: true
       llm: false
