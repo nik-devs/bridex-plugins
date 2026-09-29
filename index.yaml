@@ -68,10 +68,10 @@ plugins:
   - name: elevenlabs
     kind: integration
     description: ElevenLabs for agents — voiceover in any voice (own or the shared library) with word timings and ready subtitles, and sound effects. Outputs land in the task's artifacts. Needs the ELEVENLABS_API_KEY credential (Settings → Integrations) — separate from the voice assistant's key.
-    version: 0.1.0
+    version: 0.1.1
     repo: https://github.com/nik-devs/bridex-plugin-elevenlabs
     ref: main
-    commit: 56be0c62b401b5ebceb92290e90f4d8665355086
+    commit: 9ebb487729f3e66315859542c1f29b04627524e7
     permissions:
       network: true
       llm: false
