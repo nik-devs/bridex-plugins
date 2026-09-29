@@ -30,7 +30,7 @@ plugins:
   - name: semantic-cache-langcache
     title: Semantic cache (LangCache)
     kind: tool
-    description: Redis LangCache provider for the semantic answer cache — managed embedding-level matching on Redis Cloud (needs LANGCACHE_URL/CACHE_ID/API_KEY env)
+    description: Redis LangCache provider for the semantic answer cache — managed embedding-level matching on Redis Cloud
     version: 0.1.0
     repo: https://github.com/nik-devs/bridex-plugin-semantic-cache-langcache
     ref: main
@@ -52,7 +52,7 @@ plugins:
   - name: fal
     title: fal.ai
     kind: integration
-    description: Any fal.ai model for agents — video, image, audio. Outputs land in the task's artifacts with a cost estimate. Needs the FAL_KEY credential (Settings → Integrations).
+    description: Any fal.ai model for agents — video, image, audio. Outputs land in the task's artifacts with a cost estimate.
     version: 0.2.3
     repo: https://github.com/nik-devs/bridex-plugin-fal
     ref: main
@@ -63,7 +63,8 @@ plugins:
   - name: e2b-blender
     title: Blender (E2B)
     kind: integration
-    description: Blender for agents in an isolated cloud sandbox (E2B) — Python in a live scene or from skill scripts, long renders run in the background and wake the agent, previews, files in and out of artifacts. Needs the E2B_API_KEY credential (Settings → Integrations); on first use it builds its sandbox template in that E2B account (a few minutes, once).
+    description: Blender for agents in an isolated cloud sandbox (E2B) — Python in a live scene or from skill scripts, long renders run in the background and wake the agent, previews, files in and out of artifacts.
+    agent_notes: The first call on an E2B account builds its sandbox template there — a few minutes, once; later calls start in seconds.
     version: 0.2.0
     repo: https://github.com/nik-devs/bridex-plugin-e2b-blender
     ref: main
@@ -74,7 +75,8 @@ plugins:
   - name: elevenlabs
     title: ElevenLabs
     kind: integration
-    description: ElevenLabs for agents — voiceover in any voice (own or the shared library) with word timings and ready subtitles, and sound effects. Outputs land in the task's artifacts. Needs the ELEVENLABS_API_KEY credential (Settings → Integrations) — separate from the voice assistant's key.
+    description: ElevenLabs for agents — voiceover in any voice (own or the shared library) with word timings and ready subtitles, and sound effects. Outputs land in the task's artifacts.
+    agent_notes: Its key is ELEVENLABS_API_KEY — not the voice assistant's ELEVENLABS_PERSONA_KEY; do not reuse or ask for that one.
     version: 0.2.0
     repo: https://github.com/nik-devs/bridex-plugin-elevenlabs
     ref: main
