@@ -81,10 +81,10 @@ plugins:
     kind: integration
     description: Voiceover in any voice, with subtitles, and sound effects.
     agent_notes: Its key is ELEVENLABS_API_KEY — not the voice assistant's ELEVENLABS_PERSONA_KEY; do not reuse or ask for that one.
-    version: 0.2.0
+    version: 0.2.1
     repo: https://github.com/nik-devs/bridex-plugin-elevenlabs
     ref: main
-    commit: 61303bc89bf96ea252ef11e6a242b6cd15032053
+    commit: 3b88adf881e0791b8941f6628a5511470eec1240
     permissions:
       network: true
       llm: false
