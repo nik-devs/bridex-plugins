@@ -57,10 +57,10 @@ plugins:
     kind: integration
     description: Any fal.ai model for images, video and audio.
     agent_notes: Outputs land in the task artifacts with a cost estimate. Read fal_schema before a paid fal_run.
-    version: 0.2.3
+    version: 0.2.4
     repo: https://github.com/nik-devs/bridex-plugin-fal
     ref: main
-    commit: 28e927736b5bf2d44cdfe1baceeb58991e79f08e
+    commit: 68580516a22f672eaee2ee62977059b850a82228
     permissions:
       network: true
       llm: false
@@ -79,12 +79,12 @@ plugins:
   - name: elevenlabs
     title: ElevenLabs
     kind: integration
-    description: Voiceover in any voice, with subtitles, and sound effects.
+    description: Voiceover in any voice, with subtitles, sound effects and music.
     agent_notes: Its key is ELEVENLABS_API_KEY — not the voice assistant's ELEVENLABS_PERSONA_KEY; do not reuse or ask for that one.
-    version: 0.2.1
+    version: 0.3.0
     repo: https://github.com/nik-devs/bridex-plugin-elevenlabs
     ref: main
-    commit: 3b88adf881e0791b8941f6628a5511470eec1240
+    commit: 738e5ee75dc890d10d6f31a3eb73b89683f89651
     permissions:
       network: true
       llm: false
