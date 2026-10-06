@@ -76,6 +76,18 @@ plugins:
     permissions:
       network: true
       llm: false
+  - name: brightdata
+    title: Bright Data
+    kind: integration
+    description: Opens sites that block bots for web_fetch and the browser, searches Google/Bing, an interactive remote browser and proxies — on your Bright Data account.
+    agent_notes: web_fetch and browser_navigate already go through it on a bot wall; its own tools (brightdata_balance, brightdata_zones, brightdata_scrape, brightdata_search) steer it. Key BRIGHTDATA_API_KEY. Paid per request / traffic, capped by a daily budget.
+    version: 0.1.0
+    repo: https://github.com/nik-devs/bridex-plugin-brightdata
+    ref: main
+    commit: 2cca4cced18e30c75aecc5c88d2bc41591d5ac13
+    permissions:
+      network: true
+      llm: false
   - name: elevenlabs
     title: ElevenLabs
     kind: integration
