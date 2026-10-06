@@ -45,10 +45,10 @@ plugins:
     kind: integration
     description: Sends heavy jobs like renders to Google Cloud and wakes the agent when they finish.
     agent_notes: Cloud Run Jobs workers routed by op name; the worker calls back and the agent wakes in its session. GCP-resident (metadata auth).
-    version: 0.6.1
+    version: 0.6.2
     repo: https://github.com/nik-devs/bridex-plugin-runners-gate
     ref: main
-    commit: 2165733a2899c14af409917ae8741dd84720462b
+    commit: a936fd7a43dfbfce63c52c5c6ed968fb7ae3f46d
     permissions:
       network: true
       llm: false
