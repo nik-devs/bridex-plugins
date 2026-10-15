@@ -100,3 +100,15 @@ plugins:
     permissions:
       network: true
       llm: false
+  - name: loremax
+    title: LoreMax
+    kind: integration
+    description: LoreMax workflows for agents — images, video, audio, 3D and text, from the whole organization or a curated MCP profile; outputs land in the task's artifacts with provenance and token spend.
+    agent_notes: "Read loremax_workflows first (free) for a workflow's fields and token price; loremax_generate is paid and saves outputs into the task artifacts with provenance; a run that outlives the wait returns a generation_id and the agent is woken when it lands (or loremax_result). Needs LOREMAX_API_KEY and LOREMAX_BASE_URL; optional profile_url switches the tools to a curated LoreMax MCP profile. A `submitting` reply means the paid call is still landing: end the turn, you will be woken — never call again; one with `duplicate_of` means this exact request is already being submitted. LOREMAX_BASE_URL and profile_url must be https://."
+    version: 0.2.1
+    repo: https://github.com/echeg/bridex-plugin-loremax
+    ref: main
+    commit: fb1be0b52f61906d0c53d6f3e8e9005cf441e8d1
+    permissions:
+      network: true
+      llm: false
