@@ -112,3 +112,15 @@ plugins:
     permissions:
       network: true
       llm: false
+  - name: loremax
+    title: LoreMax
+    kind: integration
+    description: LoreMax workflows for agents — images, video, audio, 3D and text, from the whole organization or a curated MCP profile; outputs land in the task's artifacts with provenance and token spend.
+    agent_notes: "Read loremax_workflows first (free) for a workflow's fields and token price; loremax_generate is paid and saves outputs into the task artifacts with provenance; a run that outlives the wait returns a generation_id and the agent is woken when it lands (or loremax_result). loremax_upload is free: import workspace files or public HTTPS links, including Bridex file_publish URLs, and use the returned URLs in the workflow's exact named inputs. It uses the managed key; do not ask users to upload manually or share a key. Follow reference_usage from workflow details; REST references are local multipart files, not named slots. Needs LOREMAX_API_KEY only (LoreMax's address defaults to https://loremax.ai; base_url or the instance's LOREMAX_BASE_URL override it); optional profile_url switches the tools to a curated LoreMax MCP profile. A `submitting` reply means the paid call is still landing: end the turn, you will be woken — never call again; one with `duplicate_of` means this exact request is already being submitted. base_url and profile_url must be https://, base_url the address alone (no path). Start from `recommended` in the loremax_workflows list (the best live workflow per task) and follow its `rules`; a workflow's details carry `guide` (use_for, knobs, caveats). In profile mode the studio's `instructions` and each tool's own description take precedence over the guide. With allow_profile_edit on, loremax_profile_edit rewrites the profile's texts in LoreMax for every client of the profile: preview first, then apply: true."
+    version: 0.5.0
+    repo: https://github.com/echeg/bridex-plugin-loremax
+    ref: main
+    commit: f901ba27ac4be0a8cb69053a5831f13717cf628d
+    permissions:
+      network: true
+      llm: false
