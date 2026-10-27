@@ -69,10 +69,10 @@ plugins:
     kind: integration
     description: Agents build and render 3D scenes in Blender, in the cloud.
     agent_notes: The first call on an E2B account builds its sandbox template there — a few minutes, once; later calls start in seconds.
-    version: 0.2.5
+    version: 0.2.6
     repo: https://github.com/nik-devs/bridex-plugin-e2b-blender
     ref: main
-    commit: 34399012334d33897588b5a1f9c7346b7dd5533e
+    commit: d151d0405eccc35bf68a589a0aee9910f3dd05a5
     permissions:
       network: true
       llm: false
