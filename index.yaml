@@ -117,10 +117,10 @@ plugins:
     kind: integration
     description: Agents make 3D models with Tripo — from text, an image or several views — then texture, rig, animate, retopologize and convert them.
     agent_notes: Needs TRIPO_API_KEY (developers.tripo3d.ai → API Keys). API credits are bought there; a Tripo Studio subscription does not pay for API calls. Outputs are saved into the task's artifacts at once — Tripo's links expire after five minutes.
-    version: 0.1.0
+    version: 0.1.1
     repo: https://github.com/nik-devs/bridex-plugin-tripo
     ref: main
-    commit: 9425c424c7f4d82eb9e83968d391a0830d4ceaac
+    commit: fea1215355d46709628e31cea4c02f95fc7e6de9
     permissions:
       network: true
       llm: false
