@@ -56,7 +56,9 @@ plugins:
     title: fal.ai
     kind: integration
     description: Any fal.ai model for images, video and audio.
-    agent_notes: Outputs land in the task artifacts with a cost estimate. Read fal_schema before a paid fal_run.
+    agent_notes: Outputs land in the task artifacts with a cost estimate. Read fal_schema before a paid fal_run. To cut a subject out of an existing image (transparent PNG, clean hair and fur edges), fal_run fal-ai/birefnet/v2 — not a local model.
+    # the core points agents here when they reach for a local background-removal model
+    provides: [background-removal]
     version: 0.3.0
     repo: https://github.com/nik-devs/bridex-plugin-fal
     ref: main
