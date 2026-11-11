@@ -57,8 +57,21 @@ plugins:
     kind: integration
     description: Any fal.ai model for images, video and audio.
     agent_notes: Outputs land in the task artifacts with a cost estimate. Read fal_schema before a paid fal_run. To cut a subject out of an existing image (transparent PNG, clean hair and fur edges), fal_run fal-ai/birefnet/v2 — not a local model.
-    # the core points agents here when they reach for a local background-removal model
-    provides: [background-removal]
+    # what it does through its API that agents would otherwise run as a local model:
+    # the core names it, with the how, when an agent reaches for one (runtime/localModelGuard.ts)
+    provides:
+      background-removal: fal_run fal-ai/birefnet/v2 (images), fal-ai/birefnet/v2/video (video)
+      upscaling: fal_run fal-ai/seedvr/upscale/image; video — fal-ai/bytedance-upscaler/upscale/video
+      vision-models: fal_run fal-ai/sam-3/image (masks), fal-ai/florence-2-large/object-detection (boxes), fal-ai/image-preprocessors/depth-anything/v2 (depth), fal-ai/dwpose (pose)
+      speech-to-text: fal_run fal-ai/wizper (Whisper)
+      text-to-speech: fal_models category text-to-speech
+      voice-cloning: fal_run fal-ai/minimax/voice-clone
+      audio-separation: fal_run fal-ai/demucs (stems), fal-ai/deepfilternet3 (noise)
+      music: fal_models category text-to-audio
+      ocr: fal_run fal-ai/got-ocr/v2, fal-ai/florence-2-large/ocr
+      image-generation: fal_models category text-to-image / image-to-image
+      lip-sync: fal_run fal-ai/sync-lipsync/v3
+      3d: fal_run fal-ai/trellis-2, fal-ai/hunyuan-3d/v3.1/pro/image-to-3d
     version: 0.3.0
     repo: https://github.com/nik-devs/bridex-plugin-fal
     ref: main
@@ -94,11 +107,17 @@ plugins:
     title: ElevenLabs
     kind: integration
     description: Voiceover in any voice, with subtitles, sound effects and music.
-    agent_notes: Its key is ELEVENLABS_API_KEY — not the voice assistant's ELEVENLABS_PERSONA_KEY; do not reuse or ask for that one.
-    version: 0.4.1
+    agent_notes: Its key is ELEVENLABS_API_KEY — not the voice assistant's ELEVENLABS_PERSONA_KEY; do not reuse or ask for that one. eleven_transcribe turns speech into text with speakers and an .srt; eleven_api / eleven_run reach the rest of the API (voice isolation, forced alignment, voice changer and cloning, dialogue, dubbing, stems).
+    provides:
+      speech-to-text: eleven_transcribe (Scribe — speakers, word timings, .srt)
+      text-to-speech: eleven_speak
+      voice-cloning: eleven_run POST /v1/voices/add (clone from samples), POST /v1/voice-changer/{voice_id} (speech to speech), POST /v1/text-to-voice/design
+      audio-separation: eleven_run POST /v1/audio-isolation (a voice out of noise), POST /v1/music/stem-separation (stems)
+      music: eleven_music; sound effects — eleven_sfx
+    version: 0.5.0
     repo: https://github.com/nik-devs/bridex-plugin-elevenlabs
     ref: main
-    commit: 3584a36c1c179784e9b8767a369f238f5290cae4
+    commit: d748a2d3e50d66d924d7c784d9a81d37571ecad3
     permissions:
       network: true
       llm: false
@@ -118,6 +137,8 @@ plugins:
     title: Tripo 3D
     kind: integration
     description: Agents make 3D models with Tripo — from text, an image or several views — then texture, rig, animate, retopologize and convert them.
+    provides:
+      3d: tripo_run (text, an image or several views → a model; rig, animate, convert)
     agent_notes: Needs TRIPO_API_KEY (developers.tripo3d.ai → API Keys). API credits are bought there; a Tripo Studio subscription does not pay for API calls. Outputs are saved into the task's artifacts at once — Tripo's links expire after five minutes.
     version: 0.1.1
     repo: https://github.com/nik-devs/bridex-plugin-tripo
