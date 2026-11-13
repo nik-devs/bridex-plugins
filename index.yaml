@@ -151,11 +151,11 @@ plugins:
     title: Video editing
     kind: integration
     description: Agents edit video — reels, captions, titles, transitions, music — as HTML/CSS/GSAP compositions rendered to MP4, with fast libass captions, any font and reference analysis.
-    agent_notes: HyperFrames projects for designed video (video_new, video_hf with check, snapshot, compare, catalog and add — 448 blocks — measure and beats, video_render in the background); video_captions burns plain speech captions in one ffmpeg pass; video_fonts adds any font and checks glyph coverage; video_fetch takes a reference by its link; video_setup installs the official HyperFrames skills. Transcripts, voices and cut-outs come from the APIs, not from local models.
-    version: 0.1.2
+    agent_notes: HyperFrames projects for designed video (video_new, video_hf with check, snapshot, compare, catalog and add — 448 blocks — measure and beats, video_render in the background); video_captions burns plain speech captions in one ffmpeg pass (karaoke-highlight with highlight_mode cumulative keeps the words already said tinted); video_fonts adds any font and checks glyph coverage; video_fetch takes a reference by its link; video_setup installs the official HyperFrames skills. Transcripts, voices and cut-outs come from the APIs, not from local models.
+    version: 0.1.3
     repo: https://github.com/nik-devs/bridex-plugin-video-editing
     ref: main
-    commit: 3ab1984d02e976a36fd7dc41b708847281feec61
+    commit: 33203ae1d9785876f9c3b6a18143553206020be5
     permissions:
       network: true
       llm: false
